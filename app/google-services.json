@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "629345559277",
+    "project_id": "edu-trio",
+    "storage_bucket": "edu-trio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629345559277:android:207d0baae07ca9f6e4a2e4",
+        "android_client_info": {
+          "package_name": "com.example.edutrio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG3RUj-kBRuRfUURoiNBCTr0WYqdkXuI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

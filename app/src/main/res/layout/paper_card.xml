@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="12dp"
+    android:background="@color/cardview_shadow_end_color"
+    android:layout_margin="6dp">
+
+    <TextView
+        android:id="@+id/tvPCardSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/subject"/>
+
+    <TextView
+        android:id="@+id/tvPCardYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/tvPCardSubject"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/year"/>
+
+    <TextView
+        android:id="@+id/tvPCardClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvPCardSubject"
+        app:layout_constraintStart_toStartOf="@+id/tvPCardSubject"
+        android:text="@string/discipline"/>
+
+    <TextView
+        android:id="@+id/tvPCardGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/tvPCardClass"
+        app:layout_constraintEnd_toEndOf="@+id/tvPCardYear"
+        android:text="@string/group"/>
+
+    <TextView
+        android:id="@+id/tvPCardBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tvPCardClass"
+        app:layout_constraintTop_toBottomOf="@+id/tvPCardClass"
+        android:text="@string/board"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

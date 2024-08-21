@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/btnquestion"
+        android:layout_width="105dp"
+        android:layout_height="74dp"
+        android:text="@string/question"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnanswers"/>
+
+    <Button
+        android:id="@+id/btnanswers"
+        android:layout_width="105dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/answers"
+        app:layout_constraintBottom_toBottomOf="@+id/btnquestion"
+        app:layout_constraintEnd_toStartOf="@+id/btnsup"
+        app:layout_constraintStart_toEndOf="@+id/btnquestion" />
+
+    <Button
+        android:id="@+id/btnsup"
+        android:layout_width="105dp"
+        android:layout_height="74dp"
+        android:text="@string/supplementory"
+        app:layout_constraintBottom_toBottomOf="@+id/btnanswers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnanswers"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="409dp"
+        android:layout_height="72dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnanswers" />
+</androidx.constraintlayout.widget.ConstraintLayout>
