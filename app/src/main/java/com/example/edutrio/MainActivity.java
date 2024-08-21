@@ -1,5 +1,7 @@
 package com.example.edutrio;
 
+import static com.google.android.material.internal.ContextUtils.getActivity;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -57,11 +60,13 @@ public class MainActivity extends AppCompatActivity {
         Button btnSubmit = findViewById(R.id.button);
         RecyclerView rvPapers = findViewById(R.id.rv_papers);
 
+        List<paperModel> papersList = new ArrayList<>();
         papersColl.get().addOnSuccessListener(this, new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 queryDocumentSnapshots.getDocuments().forEach(documentSnapshot -> {
-                    new AlertDialog.Builder(getApplicationContext()).setTitle(documentSnapshot.toString());
+                    paperModel paperModel = documentSnapshot.toObject(com.example.edutrio.Models.paperModel.class);
+                    papersList.add(paperModel);
                 });
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -70,11 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        List<paperModel> papersList = new ArrayList<>();
-        for (int i = 0; i < 10; i++){
-            paperModel paperModel = new paperModel("Subject "+i, 2010+i, "Discipline " + i, "Group " + i, "Board " + i);
-            papersList.add(paperModel);
-        }
 
         papersAdapter papersAdapter = new papersAdapter(papersList, getApplicationContext());
 
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             String board = spBoard.toString();
             Button btnSubmit1;
         });
-        String[] institution = {"select institutions", "school", "college", "university"};
+        String[] institution = {"instType", "school", "college", "university"};
         String[] itemsClass = {" class", "9th", "10th"};
         String[] itemsSubject = {" subject", "english", "math"};
         String[] itemsYear = {"select year", "2020", "2021", "2022","2023"};
