@@ -9,4 +9,8 @@
     <string name="discipline">Class</string>
     <string name="group">Group</string>
     <string name="board">Board</string>
+    <string name="school">School</string>
+    <string name="college">College</string>
+    <string name="uni">University</string>
+    <string name="bise_grw">Bise Grw</string>
 </resources>

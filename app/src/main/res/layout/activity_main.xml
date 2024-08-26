@@ -9,42 +9,34 @@
     tools:context=".MainActivity">
 
     <Spinner
-        android:id="@+id/spinst"
+        android:id="@+id/spClass"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainRecInstName" />
+
+    <Spinner
+        android:id="@+id/spSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toEndOf="@+id/spClass"
+        app:layout_constraintTop_toTopOf="@+id/spClass" />
+
+    <Spinner
+        android:id="@+id/spYears"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toEndOf="@+id/spSubject"
+        app:layout_constraintTop_toTopOf="@id/spSubject" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainRecInstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:id="@+id/spclass"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="@+id/spsubject"
-        app:layout_constraintHorizontal_bias="0.16"
-        app:layout_constraintStart_toEndOf="@+id/spinst"
-        app:layout_constraintTop_toTopOf="@+id/spinst" />
-
-    <Spinner
-        android:id="@+id/spsubject"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spclass" />
-
-    <Spinner
-        android:id="@+id/spyears"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        app:layout_constraintStart_toStartOf="@+id/spinst"
-        app:layout_constraintTop_toBottomOf="@+id/spinst" />
-
-    <Spinner
-        android:id="@+id/spboard"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        app:layout_constraintStart_toEndOf="@+id/spyears"
-        app:layout_constraintTop_toTopOf="@+id/spyears"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
         android:id="@+id/button"
@@ -53,7 +45,7 @@
         android:text="@string/submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spboard" />
+        app:layout_constraintTop_toBottomOf="@+id/spClass" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_papers"
@@ -63,4 +55,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/mainBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

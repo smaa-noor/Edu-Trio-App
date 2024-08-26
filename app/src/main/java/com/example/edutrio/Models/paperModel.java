@@ -7,6 +7,8 @@ public class paperModel {
     String group;
     String board;
 
+    public paperModel(){}
+
     public paperModel(String subject, int year, String discipline, String group, String board){
         this.subject = subject;
         this.year = String.valueOf(year);
@@ -19,8 +21,8 @@ public class paperModel {
         this.subject = subject;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setYear(int year) {
+        this.year = String.valueOf(year);
     }
 
     public void setDiscipline(String discipline) {
