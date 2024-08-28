@@ -7,7 +7,9 @@ public class paperModel {
     String group;
     String board;
 
-    public paperModel(){}
+    public paperModel(){
+
+    }
 
     public paperModel(String subject, int year, String discipline, String group, String board){
         this.subject = subject;
